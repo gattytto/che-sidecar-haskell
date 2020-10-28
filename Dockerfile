@@ -45,7 +45,7 @@ RUN groupadd -g ${gid} ${group} && \
 USER theia  
 
 RUN cd ${HOME} && \
-    cabal update && \
+    cabal update && stack upgrade && \
     git clone https://github.com/haskell/ghcide.git && cd ghcide && stack install --system-ghc --stack-yaml stack8101.yaml && cd .. && \
     git clone https://github.com/phoityne/ghci-dap.git && git clone https://github.com/phoityne/haskell-dap.git && git clone https://github.com/hspec/hspec && \
     cd haskell-dap && stack build --system-ghc && stack install --system-ghc && cd .. && \

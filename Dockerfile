@@ -50,7 +50,7 @@ RUN cd ${HOME} && \
     git clone https://github.com/phoityne/ghci-dap.git && git clone https://github.com/phoityne/haskell-dap.git && git clone https://github.com/hspec/hspec && \
     cd haskell-dap && stack build --system-ghc && stack install --system-ghc && cd .. && \
     cd ghci-dap && stack build --system-ghc && stack install --system-ghc && cd .. && \
-    cd hspec && cabal install --lib && cabal install hspec-discover && cd .. && \
+    cd hspec && cabal install --lib && cabal install hspec-discover haskell-debug-adapter phoityne-vscode && cd .. && \
     rm -rf haskell-dap ghci-dap hspec ghcide 
     
 USER root    
